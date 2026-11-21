@@ -9,7 +9,7 @@ const SITE = {
   github: 'https://github.com/Abakar-Issa-Ali',
   linkedin: 'http://www.linkedin.com/in/ali-abakar-issa-817a841a3' ,
   email: 'abakarali025@gmail.com',
-  cv: 'assets/CV_Ali_abakar_issa.pdf',
+  cv: 'assets/CV_Ali_abakar_issa.pdf'
 };
 
 /**
