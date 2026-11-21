@@ -1,21 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>Abakar Issa — Développeur full-stack à Marseille</title>
-    <meta name="description" content="Portfolio d'Abakar Issa, développeur full-stack à Marseille : web, mobile, jeu et infra. Ouvert à une alternance (Master DevOps)." />
-    <meta property="og:title" content="Abakar Issa — Développeur full-stack" />
-    <meta property="og:description" content="Web, mobile, jeu et infra : du front jusqu'au serveur." />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abakar Issa — Développeur Full-Stack à Marseille</title>
+  <meta name="description" content="Portfolio d'Abakar Issa, développeur full-stack à Marseille : web, mobile, infra et jeu vidéo. Ouvert à une alternance.">
+  <meta property="og:title" content="Abakar Issa — Développeur Full-Stack">
+  <meta property="og:description" content="Web, mobile, infra et jeu vidéo : du front jusqu'au serveur.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://abakar-issa-ali.github.io/assets/images/profile.jpg">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="header">
+    <nav class="navbar" aria-label="Navigation principale">
+      <a href="#about" class="navbar__logo">Abakar Issa</a>
+
+      <ul class="nav" id="nav-menu">
+        <li><a href="#about" class="nav__link">À propos</a></li>
+        <li><a href="#experience" class="nav__link">Expérience</a></li>
+        <li><a href="#projects" class="nav__link">Projets</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <a class="btn btn--gradient navbar__cta" data-link="github" target="_blank" rel="noopener">Voir mon GitHub</a>
+
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= À PROPOS ================= -->
+    <section class="section hero" id="about">
+      <div class="hero__container">
+        <img class="hero__photo reveal" src="assets/images/profile.jpg" alt="Portrait d'Abakar Issa" width="800" height="800">
+
+        <div class="hero__content reveal">
+          <p class="hero__hello">Salut, je suis</p>
+          <h1 class="hero__name">Abakar Issa</h1>
+          <p class="hero__role text-gradient">Développeur Full-Stack</p>
+          <p class="hero__pitch">Basé à Marseille. Bachelor CDA en poche, Master DevOps en cours, je cherche une alternance.</p>
+
+          <div class="btn-group">
+            <a class="btn btn--outline" data-link="cv" download>Télécharger mon CV</a>
+            <a class="btn btn--outline" href="#contact">Me contacter</a>
+          </div>
+
+          <div class="socials">
+            <a class="socials__link" data-link="github" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a class="socials__link" data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPÉRIENCE ================= -->
+    <section class="section experience" id="experience">
+      <h2 class="section__title reveal">Expérience</h2>
+
+      <div class="experience__container">
+        <div class="experience__cards">
+          <article class="card exp-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg>
+            <h3 class="exp-card__title text-gradient">Développement Front-end</h3>
+            <p class="exp-card__meta">React · TypeScript · Tailwind</p>
+            <p>Interfaces web soignées et maintenables, de l'intégration à la gestion d'état, jusqu'à la livraison d'un code propre et documenté.</p>
+          </article>
+
+          <article class="card exp-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            <h3 class="exp-card__title text-gradient">Back-end &amp; données</h3>
+            <p class="exp-card__meta">Node.js · Express · Python · FastAPI</p>
+            <p>API REST, modélisation MCD/MPD, MySQL, MongoDB et Prisma. Je conçois la base avant d'écrire la première route.</p>
+          </article>
+
+          <article class="card exp-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            <h3 class="exp-card__title text-gradient">Mobile</h3>
+            <p class="exp-card__meta">React Native · Expo · Kotlin</p>
+            <p>Apps mobiles avec authentification et paiements, streaming WebRTC, modules natifs Android et builds EAS.</p>
+          </article>
+
+          <article class="card exp-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="7" rx="1.5"/><path d="M7 6.5h.01M7 17.5h.01"/></svg>
+            <h3 class="exp-card__title text-gradient">DevOps &amp; infra</h3>
+            <p class="exp-card__meta">Docker · Nginx · VPS Linux</p>
+            <p>Déploiement sur VPS, conteneurs Docker, Nginx, services systemd et stockage S3. C'est le cap de mon Master DevOps.</p>
+          </article>
+        </div>
+
+        <figure class="experience__photo reveal">
+          <img src="assets/images/about.jpg" alt="Abakar Issa" width="800" height="1000" loading="lazy">
+          <figcaption class="experience__badge">
+            <strong class="text-gradient">2 ans</strong>
+            d'alternance comme développeur à L'Atelier de La Plateforme
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= PROJETS ================= -->
+    <section class="section projects" id="projects">
+      <h2 class="section__title reveal">Projets récents</h2>
+      <!-- Cartes générées par js/main.js à partir de PROJECTS (js/data.js) -->
+      <div class="projects__grid" id="projects-grid"></div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
+      <h2 class="section__title reveal">Contact</h2>
+      <p class="contact__intro reveal">Une alternance de développeur à pourvoir ? Écris-moi, je réponds vite.</p>
+
+      <div class="contact__cards">
+        <a class="card contact-card reveal" data-link="email">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+          <span class="contact-card__label">Email</span>
+          <span class="contact-card__value" data-text="email"></span>
+        </a>
+        <a class="card contact-card reveal" data-link="linkedin" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7h.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
+          <span class="contact-card__label">LinkedIn</span>
+          <span class="contact-card__value">Abakar Issa</span>
+        </a>
+        <a class="card contact-card reveal" data-link="github" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          <span class="contact-card__label">GitHub</span>
+          <span class="contact-card__value">Abakar-Issa-Ali</span>
+        </a>
+        <div class="card contact-card reveal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="contact-card__label">Localisation</span>
+          <span class="contact-card__value">Marseille, France</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <ul class="footer__links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>© <span id="year">2026</span> Abakar Issa. Tous droits réservés.</p>
+  </footer>
+
+</body>
 </html>

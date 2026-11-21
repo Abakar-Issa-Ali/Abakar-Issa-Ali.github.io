@@ -1,0 +1,211 @@
+/* =========================================================
+   COMPOSANTS — boutons, navigation, cartes, tags
+   ========================================================= */
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease), transform 0.2s ease;
+}
+
+.btn--gradient {
+  background: var(--gradient);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn--gradient:hover {
+  background: var(--gradient-reverse);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  border: 2px solid var(--color-ink);
+  color: var(--color-ink);
+}
+
+.btn--outline:hover {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ---------- Navigation ---------- */
+.header {
+  position: fixed;
+  inset: 1rem 0 auto;
+  z-index: 100;
+  padding: 0 1rem;
+}
+
+.navbar {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.6rem 0.7rem 0.6rem 1.8rem;
+  background: var(--color-nav);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navbar__logo {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.35rem;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__link {
+  position: relative;
+  padding: 0.3rem 0;
+  color: #f2f2f2;
+  font-size: 0.98rem;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gradient);
+  transition: width var(--ease);
+}
+
+.nav__link:hover::after,
+.nav__link.is-active::after {
+  width: 100%;
+}
+
+/* Bouton burger (visible uniquement sur mobile) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-white);
+  transition: transform var(--ease), opacity var(--ease);
+}
+
+.burger.is-open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.burger.is-open span:nth-child(2) { opacity: 0; }
+.burger.is-open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+/* ---------- Cartes ---------- */
+.card {
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  transition: background var(--ease), color var(--ease), transform var(--ease);
+}
+
+/* ---------- Tags ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.tag {
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-tag);
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* ---------- Responsive : menu mobile ---------- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.6rem 0.8rem 0.6rem 1.8rem;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1.2rem 0;
+    background: rgba(17, 17, 17, 0.96);
+    border-radius: 2rem;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav__link {
+    display: inline-block;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+}

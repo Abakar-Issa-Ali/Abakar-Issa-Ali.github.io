@@ -1,0 +1,127 @@
+/* =========================================================
+   BASE — variables, reset, typographie, utilitaires
+   ========================================================= */
+
+:root {
+  /* Couleurs */
+  --color-blue: #0b8cf5;
+  --color-magenta: #d10cf2;
+  --color-ink: #0d0d0d;
+  --color-text: #333;
+  --color-muted: #5a5a5a;
+  --color-nav: #353535;
+  --color-tag: #f1f1f1;
+  --color-white: #fff;
+
+  --gradient: linear-gradient(90deg, var(--color-blue), var(--color-magenta));
+  --gradient-reverse: linear-gradient(90deg, var(--color-magenta), var(--color-blue));
+
+  /* Typographie */
+  --font: "Poppins", system-ui, -apple-system, sans-serif;
+
+  /* Mise en page */
+  --container: 1200px;
+  --radius-card: 2.5rem;
+  --radius-pill: 999px;
+  --header-offset: 110px;
+
+  /* Animations */
+  --ease: 0.3s ease;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
+  scrollbar-color: var(--color-magenta) #e6e6e6;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Barre de défilement en dégradé (Chrome, Edge, Safari) */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #e6e6e6; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--color-blue), var(--color-magenta)); }
+
+/* ---------- Utilitaires ---------- */
+.text-gradient {
+  display: inline-block;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Apparition au défilement (classe ajoutée par main.js) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
